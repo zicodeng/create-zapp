@@ -1,0 +1,49 @@
+/*=======================================
+=            Reset Box Model            =
+=======================================*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*=====  End of Reset Box Model  ======*/
+
+body {
+  position: relative;
+  width: 100vw;
+  color: $black-dark;
+  font-family: $font-family-roboto;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  appearance: none;
+  box-shadow: none;
+  outline: none;
+}
+
+input,
+textarea,
+button {
+  border: 0;
+  color: $black-dark;
+  font-size: $font-size-s;
+  outline: none;
+}
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

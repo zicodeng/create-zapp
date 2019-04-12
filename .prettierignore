@@ -1,0 +1,12 @@
+dist
+node_modules
+fonts
+static
+*.lock
+*.sh
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+.*

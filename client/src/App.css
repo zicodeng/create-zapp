@@ -1,0 +1,21 @@
+.app-title {
+  color: $blue;
+}
+
+.post {
+  display: flex;
+  margin: $spacing-m 0;
+
+  > .author-name {
+    color: $color-success;
+  }
+
+  > .post-title {
+    margin: 0 $spacing-m;
+    color: $color-warning;
+  }
+
+  > .votes {
+    color: $color-danger;
+  }
+}
