@@ -6,6 +6,12 @@
     "stylelint-config-standard",
     "stylelint-config-prettier"
   ],
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.ts",
+    "**/*.jsx",
+    "**/*.tsx",
+  ],
   "rules": {
     "at-rule-blacklist": ["debug"],
     "at-rule-no-vendor-prefix": true,
@@ -17,7 +23,6 @@
     "color-no-invalid-hex": true,
     "declaration-bang-space-after": "never",
     "declaration-bang-space-before": "always",
-    "declaration-block-semicolon-newline-after": "always",
     "declaration-block-semicolon-space-before": "never",
     "declaration-block-single-line-max-declarations": 1,
     "declaration-block-trailing-semicolon": "always",
@@ -107,11 +112,10 @@
       }
     ],
     "selector-list-comma-newline-after": "always",
-    "selector-max-compound-selectors": 3,
+    "declaration-block-semicolon-newline-after": "always",
     "selector-max-id": 0,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "double",
-    "selector-pseudo-element-no-unknown": true,
     "shorthand-property-no-redundant-values": true,
     "string-quotes": "single",
     "value-no-vendor-prefix": true,
@@ -120,5 +124,8 @@
     "at-rule-no-unknown": null,
     "max-nesting-depth": null,
     "selector-no-qualifying-type": null,
+    "selector-pseudo-element-no-unknown": null,
+    "selector-pseudo-class-no-unknown": null,
+    "selector-max-compound-selectors": null,
   }
 }
