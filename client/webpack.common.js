@@ -1,8 +1,60 @@
 const path = require('path');
 
+const chalk = require('chalk');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+const mode = process.env.NODE_ENV;
+console.log(chalk.green(`Building client for ${mode}...`));
+
+/**
+ * Set up two CSS rules,
+ * one for transforming custom CSS with CSS modules,
+ * the other one for transforming vendor CSS
+ */
+const getCSSRules = mode => [
+  {
+    test: /\.css$/,
+    include: [path.resolve(__dirname, './src')],
+    use: [
+      {
+        loader:
+          mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+          sourceMap: true,
+          modules: true,
+          localIdentName: '[name]__[local]--[hash:base64:5]',
+        },
+      },
+      {
+        loader: 'postcss-loader',
+      },
+    ],
+  },
+  {
+    test: /\.css$/,
+    // Prefer whitelist over blacklist
+    include: [
+      path.resolve(__dirname, './node_modules/typeface-roboto'),
+      path.resolve(__dirname, './node_modules/normalize.css'),
+    ],
+    use: [
+      {
+        loader: 'style-loader',
+      },
+      {
+        loader: 'css-loader',
+      },
+    ],
+  },
+];
+
+const commonConfig = {
+  mode,
   entry: {
     index: './src/index.tsx',
   },
@@ -65,4 +117,9 @@ module.exports = {
       chunks: ['index', 'styles', 'vendors'],
     }),
   ],
+};
+
+module.exports = {
+  getCSSRules,
+  commonConfig,
 };

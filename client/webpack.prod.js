@@ -1,4 +1,3 @@
-const chalk = require('chalk');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -7,41 +6,13 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
-const common = require('./webpack.common.js');
+const { commonConfig, getCSSRules } = require('./webpack.common.js');
 
-console.log(chalk.green('Building client for production...'));
-
-module.exports = merge.smart(common, {
+module.exports = merge.smart(commonConfig, {
   watch: true,
   devtool: 'source-map',
-  mode: 'production',
-  devServer: {
-    historyApiFallback: true,
-  },
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        exclude: /node_modules\/(?!(typeface-roboto|normalize.css)\/).*/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: true,
-              modules: true,
-              localIdentName: '[hash:base64:5]',
-            },
-          },
-          {
-            loader: 'postcss-loader',
-          },
-        ],
-      },
-    ],
+    rules: [...getCSSRules('production')],
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
