@@ -11,6 +11,7 @@ Boilerplate for creating modern web application
 ### Front-End
 
 - React: https://reactjs.org/
+- React router: https://reacttraining.com/react-router/web/guides/quick-start
 - PostCSS: https://github.com/postcss/postcss
 - GraphQL client: https://github.com/apollographql/apollo-client
 

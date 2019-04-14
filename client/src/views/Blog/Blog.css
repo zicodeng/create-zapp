@@ -1,7 +1,3 @@
-.app-title {
-  color: $blue;
-}
-
 .post {
   display: flex;
   margin: $spacing-m 0;

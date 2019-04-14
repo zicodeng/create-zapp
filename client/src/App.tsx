@@ -1,37 +1,20 @@
 import * as React from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-import { graphql } from 'react-apollo';
-import { compose, mapProps, branch, renderComponent } from 'recompose';
-import classNames from 'classnames/bind';
+import { pure } from 'recompose';
 
-import { GET_POSTS } from 'graphql/blog/queries';
+import { Routes, Home, Blog } from 'views';
+import { Header } from 'components';
 
-import styles from './App.css';
-const cx = classNames.bind(styles);
-
-const App = compose(
-  graphql(GET_POSTS, { name: 'getPosts' }),
-  mapProps(({ getPosts: { posts } }) => ({ posts })),
-  branch(
-    ({ posts }) => !Boolean(posts),
-    renderComponent(() => <div>Loading...</div>),
-  ),
-)(({ posts }) => (
-  <main>
-    <h1 className={cx('app-title')}>Create Zapp</h1>
-    <ul>
-      {posts.map(({ author, title, votes }, i) => (
-        <li key={i} className={cx('post')}>
-          <div className={cx('author-name')}>
-            <span>{author.firstName}</span>
-            <span>{author.lastName}</span>
-          </div>
-          <span className={cx('post-title')}>{title}</span>
-          <span className={cx('votes')}>{votes}</span>
-        </li>
-      ))}
-    </ul>
-  </main>
+const App = pure(() => (
+  <BrowserRouter>
+    <Route component={Header} />
+    <Switch>
+      <Route exact path={Routes.HOME} component={Home} />
+      <Route path={Routes.BLOG} component={Blog} />
+      <Redirect to={Routes.HOME} />
+    </Switch>
+  </BrowserRouter>
 ));
 
 export default hot(App);

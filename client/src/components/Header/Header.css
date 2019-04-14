@@ -1,0 +1,28 @@
+.header {
+  position: relative;
+  height: 60px;
+  color: $white;
+  background-color: $blue;
+}
+
+.global-menu {
+  height: 100%;
+
+  > ul {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+}
+
+.menu-item {
+  margin: 0 $spacing-l;
+  cursor: pointer;
+
+  > a {
+    &:hover,
+    .selected {
+      color: $orange;
+    }
+  }
+}
