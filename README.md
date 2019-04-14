@@ -14,6 +14,7 @@ Boilerplate for creating modern web application
 - React router: https://reacttraining.com/react-router/web/guides/quick-start
 - PostCSS: https://github.com/postcss/postcss
 - Apollo client (GraphQL client): https://github.com/apollographql/apollo-client
+- Font Awesome: https://fontawesome.com/
 
 ### Back-End
 
