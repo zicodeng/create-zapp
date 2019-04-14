@@ -109,7 +109,6 @@
     "selector-list-comma-newline-after": "always",
     "selector-max-compound-selectors": 3,
     "selector-max-id": 0,
-    "selector-no-qualifying-type": true,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-element-no-unknown": true,
@@ -120,5 +119,6 @@
     "comment-whitespace-inside": null,
     "at-rule-no-unknown": null,
     "max-nesting-depth": null,
+    "selector-no-qualifying-type": null,
   }
 }
