@@ -35,17 +35,6 @@
     "function-url-quotes": "always",
     "indentation": 2,
     "length-zero-no-unit": true,
-    "max-nesting-depth": [
-      1,
-      {
-        "ignoreAtRules": [
-          "each",
-          "media",
-          "supports",
-          "include"
-        ]
-      }
-    ],
     "media-feature-name-no-vendor-prefix": true,
     "media-feature-parentheses-space-inside": "never",
     "no-missing-end-of-source-newline": true,
@@ -130,5 +119,6 @@
 
     "comment-whitespace-inside": null,
     "at-rule-no-unknown": null,
+    "max-nesting-depth": null,
   }
 }
