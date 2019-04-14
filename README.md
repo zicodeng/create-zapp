@@ -13,12 +13,12 @@ Boilerplate for creating modern web application
 - React: https://reactjs.org/
 - React router: https://reacttraining.com/react-router/web/guides/quick-start
 - PostCSS: https://github.com/postcss/postcss
-- GraphQL client: https://github.com/apollographql/apollo-client
+- Apollo client (GraphQL client): https://github.com/apollographql/apollo-client
 
 ### Back-End
 
 - Node.js: https://nodejs.org/en/about/
-- GraphQL server: https://github.com/apollographql/apollo-server
+- Apollo server (GraphQL server): https://github.com/apollographql/apollo-server
 
 ### Module Bundlers
 
