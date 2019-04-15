@@ -12,46 +12,51 @@ console.log(chalk.green(`Building client for ${mode}...`));
  * one for transforming custom CSS with CSS modules,
  * the other one for transforming vendor CSS
  */
-const getCSSRules = mode => [
-  {
-    test: /\.css$/,
-    include: [path.resolve(__dirname, './src')],
-    use: [
-      {
-        loader:
-          mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-      },
-      {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          sourceMap: true,
-          modules: true,
-          localIdentName: '[name]__[local]--[hash:base64:5]',
+const getCSSRules = mode => {
+  const isDev = mode === 'development';
+  return [
+    {
+      test: /\.css$/,
+      include: [path.resolve(__dirname, './src')],
+      use: [
+        {
+          loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
         },
-      },
-      {
-        loader: 'postcss-loader',
-      },
-    ],
-  },
-  {
-    test: /\.css$/,
-    // Prefer whitelist over blacklist
-    include: [
-      path.resolve(__dirname, './node_modules/typeface-roboto'),
-      path.resolve(__dirname, './node_modules/normalize.css'),
-    ],
-    use: [
-      {
-        loader: 'style-loader',
-      },
-      {
-        loader: 'css-loader',
-      },
-    ],
-  },
-];
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            sourceMap: true,
+            modules: true,
+            localIdentName: isDev
+              ? '[name]__[local]--[hash:base64:5]'
+              : '[hash:base64:5]',
+          },
+        },
+        {
+          loader: 'postcss-loader',
+        },
+      ],
+    },
+    {
+      test: /\.css$/,
+      // Prefer whitelist over blacklist
+      include: [
+        path.resolve(__dirname, './node_modules/typeface-roboto'),
+        path.resolve(__dirname, './node_modules/normalize.css'),
+        path.resolve(__dirname, './node_modules/react-responsive-carousel'),
+      ],
+      use: [
+        {
+          loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+        },
+        {
+          loader: 'css-loader',
+        },
+      ],
+    },
+  ];
+};
 
 const commonConfig = {
   mode,
