@@ -104,16 +104,8 @@
         "ignore": ["after-comment"]
       }
     ],
-    "selector-class-pattern": [
-      "^[a-z0-9\\-]+$",
-      {
-        "message":
-          "Selector should be written in lowercase with hyphens (selector-class-pattern)"
-      }
-    ],
     "selector-list-comma-newline-after": "always",
     "declaration-block-semicolon-newline-after": "always",
-    "selector-max-id": 0,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "double",
     "shorthand-property-no-redundant-values": true,
@@ -127,5 +119,7 @@
     "selector-pseudo-element-no-unknown": null,
     "selector-pseudo-class-no-unknown": null,
     "selector-max-compound-selectors": null,
+    "selector-max-id": null,
+    "selector-class-pattern": null
   }
 }
