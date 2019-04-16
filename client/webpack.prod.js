@@ -16,6 +16,7 @@ module.exports = merge.smart(commonConfig, {
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    // Doc: https://webpack.js.org/plugins/split-chunks-plugin/
     splitChunks: {
       cacheGroups: {
         styles: {
