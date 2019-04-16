@@ -69,6 +69,7 @@ const commonConfig = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
   },
+  context: __dirname,
   resolve: {
     symlinks: false,
     cacheWithContext: false,
