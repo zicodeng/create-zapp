@@ -2,7 +2,7 @@ const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const { commonConfig, getCSSRules } = require('./webpack.common.js');
+const { commonConfig, getCSSRules } = require('./webpack.common');
 
 module.exports = merge.smart(commonConfig, {
   output: {

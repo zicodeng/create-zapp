@@ -6,7 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
-const { commonConfig, getCSSRules } = require('./webpack.common.js');
+const { commonConfig, getCSSRules } = require('./webpack.common');
 
 module.exports = merge.smart(commonConfig, {
   watch: true,
