@@ -9,7 +9,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const { commonConfig, getCSSRules } = require('./webpack.common');
 
 module.exports = merge.smart(commonConfig, {
-  watch: true,
   devtool: 'source-map',
   module: {
     rules: [...getCSSRules('production')],
