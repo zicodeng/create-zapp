@@ -4,6 +4,8 @@ import classNames from 'classnames/bind';
 import styles from './Home.css';
 const cx = classNames.bind(styles);
 
+import imgLogo from 'images/logo.png';
+
 const Home = () => (
   <main>
     <h1 className={cx('title')}>Create Zapp</h1>
@@ -36,6 +38,7 @@ const Home = () => (
       repellendus repellat quidem, odit quas saepe laudantium assumenda, magnam
       eum!
     </p>
+    <img src={imgLogo} />
   </main>
 );
 

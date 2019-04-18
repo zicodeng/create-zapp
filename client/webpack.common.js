@@ -106,12 +106,29 @@ const commonConfig = {
           },
         ],
       },
+      // For loading fonts
       {
-        test: /\.(png|jpg|gif|woff|woff2|ttf)$/,
-        exclude: /node_modules\/(?!(typeface-roboto)\/).*/,
+        test: /\.(woff|woff2|ttf)$/,
+        include: [path.resolve(__dirname, './node_modules/typeface-roboto')],
         use: [
           {
             loader: 'file-loader',
+            options: {
+              outputPath: 'public/fonts',
+            },
+          },
+        ],
+      },
+      // For loading images
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        include: [path.resolve(__dirname, './public/images')],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'public/images',
+            },
           },
         ],
       },
