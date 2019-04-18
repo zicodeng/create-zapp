@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
@@ -39,6 +40,11 @@ module.exports = merge.smart(commonConfig, {
     new MiniCssExtractPlugin({
       filename: '[name].[hash].min.css',
       chunkFilename: '[name].[hash].min.css',
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './public/images/logo.png',
+      prefix: 'public/favicons/',
+      title: 'Create Zapp',
     }),
   ],
 });

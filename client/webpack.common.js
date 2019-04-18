@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const mode = process.env.NODE_ENV;
+const isDev = mode === 'development';
 console.log(chalk.green(`Building client for ${mode}...`));
 
 /**
@@ -121,6 +122,7 @@ const commonConfig = {
       filename: 'index.html',
       template: './src/index.html',
       chunks: ['index', 'styles', 'vendors'],
+      favicon: isDev ? './public/favicon.ico' : false,
     }),
   ],
 };
