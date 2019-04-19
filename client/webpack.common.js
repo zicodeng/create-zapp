@@ -108,7 +108,7 @@ const commonConfig = {
       },
       // For loading fonts
       {
-        test: /\.(woff|woff2|ttf)$/,
+        test: /\.(woff|woff2|ttf|eot|otf)$/,
         include: [path.resolve(__dirname, './node_modules/typeface-roboto')],
         use: [
           {
