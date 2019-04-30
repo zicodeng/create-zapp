@@ -25,3 +25,4 @@ bower_components
 .DS_Store
 .docz
 credentials.sh
+.env
