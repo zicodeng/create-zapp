@@ -1,4 +1,5 @@
 const merge = require('webpack-merge');
+const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
@@ -37,6 +38,9 @@ module.exports = merge.smart(commonConfig, {
   plugins: [
     new CleanWebpackPlugin(),
     new BundleAnalyzerPlugin(),
+    new Dotenv({
+      path: path.resolve(__dirname, './.env/.env.prod'),
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].min.css',
       chunkFilename: '[name].[hash].min.css',
