@@ -67,10 +67,10 @@
     "normalize.css": "^8.0.1",
     "react": "^16.8.5",
     "react-apollo": "^2.5.3",
+    "react-apollo-hooks": "^0.4.5",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.8.0",
     "react-router-dom": "^5.0.0",
-    "recompose": "^0.30.0",
     "typeface-roboto": "^0.0.54"
   },
   "husky": {
