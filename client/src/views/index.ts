@@ -1,4 +1,11 @@
+import { lazy } from 'react';
+
 export { default as Routes } from './Routes';
 
-export { default as Home } from './Home/LoadableHome';
-export { default as Blog } from './Blog/LoadableBlog';
+export const Home = lazy(() =>
+  import(/* webpackChunkName: 'home' */ './Home/Home'),
+);
+
+export const Blog = lazy(() =>
+  import(/* webpackChunkName: 'blog' */ './Blog/Blog'),
+);
