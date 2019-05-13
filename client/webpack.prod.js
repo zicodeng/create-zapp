@@ -3,7 +3,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -38,7 +38,6 @@ module.exports = merge.smart(commonConfig, {
     },
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new BundleAnalyzerPlugin(),
     new Dotenv({
       path: path.resolve(__dirname, './.env/.env.prod'),
@@ -51,6 +50,22 @@ module.exports = merge.smart(commonConfig, {
       logo: './public/images/logo.png',
       prefix: 'public/favicons/',
       title: 'Create Zapp',
+    }),
+    new FileManagerPlugin({
+      onStart: [
+        {
+          delete: ['./dist/'],
+        },
+      ],
+      onEnd: [
+        {
+          copy: [
+            // 200.html is required by surge.sh to make client-side routing work
+            // https://surge.sh/help/adding-a-200-page-for-client-side-routing
+            { source: './dist/index.html', destination: './dist/200.html' },
+          ],
+        },
+      ],
     }),
   ],
 });
