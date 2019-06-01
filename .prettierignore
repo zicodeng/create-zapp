@@ -7,20 +7,20 @@ yarn-error.log*
 lerna-debug.log*
 
 # Coverage directory used by tools like istanbul
-**/coverage/**
+coverage
 
 # Compiled output
-**/build/**
-**/dist/**
-**/tmp/**
-**/.docz/**
+build
+dist
+tmp
+.docz
 
 # Dependency directories
-**/node_modules/**
-**/bower_components/**
+node_modules
+bower_components
 
 # Cache
-**/.cache-loader/**
+.cache-loader
 
 # Misc
 *.lock
@@ -34,5 +34,4 @@ lerna-debug.log*
 .DS_Store
 tsconfig.json
 credentials.sh
-**/.env/**
-**/fonts/**
+fonts
