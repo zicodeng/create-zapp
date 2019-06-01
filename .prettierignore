@@ -32,6 +32,7 @@ lerna-debug.log*
 *.gif
 .*
 .DS_Store
+tsconfig.json
 credentials.sh
 **/.env/**
 **/fonts/**
