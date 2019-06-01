@@ -81,17 +81,17 @@
   "lint-staged": {
     "linters": {
       "*.css": [
-        "prettier --write",
+        "prettier --write --ignore-path ../.prettierignore",
         "stylelint --fix",
         "git add"
       ],
       "*.{ts,tsx}": [
-        "prettier --write",
+        "prettier --write --ignore-path ../.prettierignore",
         "tslint --fix",
         "git add"
       ],
       "*.{md,json,js,jsx}": [
-        "prettier --write",
+        "prettier --write --ignore-path ../.prettierignore",
         "git add"
       ]
     }

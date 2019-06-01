@@ -49,12 +49,12 @@
   "lint-staged": {
     "linters": {
       "*.{ts}": [
-        "prettier --write",
+        "prettier --write --ignore-path ../.prettierignore",
         "tslint --fix",
         "git add"
       ],
       "*.{md,json,js}": [
-        "prettier --write",
+        "prettier --write --ignore-path ../.prettierignore",
         "git add"
       ]
     }

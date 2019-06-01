@@ -36,5 +36,3 @@ tsconfig.json
 credentials.sh
 **/.env/**
 **/fonts/**
-**/static/**
-
