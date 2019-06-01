@@ -35,3 +35,6 @@ bower_components
 tsconfig.json
 credentials.sh
 fonts
+static
+public
+assets
